@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterjourney/topics/navigationroute/SecondScreen.dart';
+
 
 class LefNavigationDrawer extends StatelessWidget {
   @override
@@ -72,6 +74,14 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
                   /// Close drawer
                   Navigator.of(context).pop();
+
+                  /// Navigate to Specific Screen
+                  /*
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                  );
+                   */
 
                 }),
             ListTile(
