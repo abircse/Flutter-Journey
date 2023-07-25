@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/scaffolds/MyBottomNavigationBar.dart';
+import 'package:flutterjourney/topics/navigationroute/FirstScreen.dart';
 
 void main() {
-  runApp(MyBottomNavigationBar());
+  //runApp(LefNavigationDrawer());
+  runApp(MaterialApp(
+    home: FirstScreen(),
+  )
+  );
 }

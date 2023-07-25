@@ -75,7 +75,7 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
                 }),
             ListTile(
-                leading: Icon(Icons.bur),
+                leading: Icon(Icons.abc_rounded),
                 title: Text("Burger"),
                 onTap: () {}),
             ListTile(
