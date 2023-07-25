@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/navigationroute/SecondScreen.dart';
+import 'package:flutterjourney/sample-pages.dart';
 
 
 class LefNavigationDrawer extends StatelessWidget {
@@ -24,15 +24,26 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
   /// Variable for handle scaffold state pass to key in scaffold
   var scaffoldKey = GlobalKey<ScaffoldState>();
-
   var bodyTitle = "A drawer is an invisible side screen";
+
+  var _myDrawerReplacableScreensData = [
+    HomeScreen(),
+    AccountScreen(),
+    ProfileScreen(),
+    DashboardScreen()
+  ];
+
+  var _toolbarTitle = ["Home", "Account", "Profile", "Dashboard"];
+
+  int selectedDrawerItem = 0;
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text("Left Navigation Drawer"),
+        title: Text(_toolbarTitle[selectedDrawerItem]),
         leading: IconButton(
             icon: Icon(Icons.no_food_outlined),
             onPressed: () {
@@ -40,10 +51,8 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
             }),
       ),
       body: Center(
-          child: Text(
-        bodyTitle,
-        style: TextStyle(fontSize: 20.0),
-      )),
+          child: _myDrawerReplacableScreensData[selectedDrawerItem],
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -62,6 +71,10 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
                 leading: Icon(Icons.home),
                 title: Text("Home"),
                 onTap: () {
+
+                  setState(() {
+                    selectedDrawerItem = 0;
+                  });
 
                   /// Snackbar
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -85,17 +98,35 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
                 }),
             ListTile(
-                leading: Icon(Icons.abc_rounded),
-                title: Text("Burger"),
-                onTap: () {}),
+                leading: Icon(Icons.account_balance),
+                title: Text("Account"),
+                onTap: () {
+                  setState(() {
+                    selectedDrawerItem = 1;
+                      /// Close drawer
+                      Navigator.of(context).pop();
+                  });
+                }),
+            ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                onTap: () {
+                  setState(() {
+                    selectedDrawerItem = 2;
+                     /// Close drawer
+                     Navigator.of(context).pop();
+                  });
+                }),
             ListTile(
                 leading: Icon(Icons.dashboard),
-                title: Text("Pizza"),
-                onTap: () {}),
-            ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Juice-Orange"),
-                onTap: () {}),
+                title: Text("Dashboard"),
+                onTap: () {
+                    setState(() {
+                      selectedDrawerItem = 3;
+                        /// Close drawer
+                        Navigator.of(context).pop();
+                    });
+                }),
           ],
         ),
       ),
