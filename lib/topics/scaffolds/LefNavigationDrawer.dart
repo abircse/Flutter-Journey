@@ -45,7 +45,7 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
       appBar: AppBar(
         title: Text(_toolbarTitle[selectedDrawerItem]),
         leading: IconButton(
-            icon: Icon(Icons.no_food_outlined),
+            icon: Icon(Icons.menu),
             onPressed: () {
               scaffoldKey.currentState?.openDrawer();
             }),
