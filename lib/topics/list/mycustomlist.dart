@@ -16,7 +16,7 @@ class Mycustomlist extends StatelessWidget {
         itemBuilder: (context, index){
           var user = myUserList[index];
           return ListTile(
-            leading: Image.asset('assets/images/user.png'),
+            leading: Image.asset('images/user.png'),
             title: Text(user.name.toString(), style: const TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),
             subtitle: Text("Age: ${user.age}"),
           );
