@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/scaffolds/LefNavigationDrawer.dart';
+import 'package:flutterjourney/topics/list/mylist.dart';
 
 void main() {
   /*
@@ -9,5 +9,9 @@ void main() {
   );
   */
 
-  runApp(LefNavigationDrawer());
+  runApp(MaterialApp(
+    theme: ThemeData(primarySwatch: Colors.blue),
+    home: MyList(),
+  )
+  );
 }
