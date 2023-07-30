@@ -44,13 +44,13 @@ class _CustomFont extends State<CustomFontActivity> {
         ],
       ),
       body: Column(
-        children: [
-          Text(
-            'Hello, Nayeem! How are you? Hello, Nayeem! How are you? Hello, Nayeem! How are you? Hello, Nayeem! How are you?',
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          )
+        children: <Widget>[
+          FilledButton(onPressed: () {}, child: const Text("Login"),),
+          FilledButton(onPressed: () {}, child: const Text("Registration")),
+          FilledButton(onPressed: () {}, child: const Text("SignUp ")),
+          FilledButton(onPressed: () {}, child: const Text("Forgot Password")),
+          FilledButton(onPressed: () {}, child: const Text("Reset password"))
+
         ],
       ),
     );

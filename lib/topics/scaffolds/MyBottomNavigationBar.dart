@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterjourney/sample-pages.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
+  const MyBottomNavigationBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,19 +15,21 @@ class MyBottomNavigationBar extends StatelessWidget {
 }
 
 class BottomNavigationActivity extends StatefulWidget {
+  const BottomNavigationActivity({super.key});
+
   @override
   _bottomNav createState() => _bottomNav();
 }
 
 class _bottomNav extends State<BottomNavigationActivity> {
-  var _myScreensData = [
+  final _myScreensData = [
     HomeScreen(),
     AccountScreen(),
     ProfileScreen(),
     DashboardScreen()
   ];
 
-  var _toolbarTitle = ["Home", "Account", "Profile", "Dashboard"];
+  final _toolbarTitle = ["Home", "Account", "Profile", "Dashboard"];
 
   int selectedBottomNavItem = 0;
 
