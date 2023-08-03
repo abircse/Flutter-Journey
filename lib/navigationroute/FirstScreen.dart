@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/navigationroute/SecondScreen.dart';
+import 'package:flutterjourney/navigationroute/SecondScreen.dart';
 
 class FirstScreen extends StatelessWidget {
 

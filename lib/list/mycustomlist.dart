@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/list/user.dart';
+import 'package:flutterjourney/list/user.dart';
 
 import 'customItemdetails.dart';
 

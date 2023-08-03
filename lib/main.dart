@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/grid/gridlistview.dart';
+import 'package:flutterjourney/grid/gridlistview.dart';
 
 void main() {
   runApp(MaterialApp(

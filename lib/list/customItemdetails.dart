@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/topics/list/user.dart';
+import 'package:flutterjourney/list/user.dart';
 
 class CustomItemDetailsScreen extends StatelessWidget {
   const CustomItemDetailsScreen({super.key, required this.user});
