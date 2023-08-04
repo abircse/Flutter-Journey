@@ -15,38 +15,15 @@ class MyColumnRowWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Container(
-          color: Colors.blue,
-          height: 70.00,
-          width: double.infinity,
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(Icons.arrow_back_ios, color: Colors.white),
-              SizedBox(height: 5),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 5),
-                  Text(
-                    "Asus Official Store",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: Colors.white),
-                  ),
-                  Text("Active 5 hours ago",
-                      style: TextStyle(color: Colors.white, fontSize: 14)),
-                  SizedBox(height: 5),
-                ],
-              ),
-              SizedBox(height: 5),
-              Icon(Icons.menu, color: Colors.white)
-            ],
-          ),
+        leading: const Icon(Icons.menu),
+        title: const Text(
+          "Asus Official Store",
+          style: TextStyle(fontSize: 18),
         ),
+        centerTitle: false,
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -62,7 +39,7 @@ class MyColumnRowWidgets extends StatelessWidget {
                     "ASUS GEN BOOK 5",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 23,
                         color: Colors.black),
                   ),
                 ),
@@ -70,7 +47,7 @@ class MyColumnRowWidgets extends StatelessWidget {
                   padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
                   child: Text(
                     "Type: Pro 17 W700",
-                    style: TextStyle(fontSize: 17, color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ),
 
@@ -181,7 +158,7 @@ class MyColumnRowWidgets extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
                   child: Text(
-                    "In order to test each laptop, we’ve conducted industry-standard benchmarks to determine performance and professional-grade equipment to evaluate the screen. We also measure battery life, judge design quality and even check for any cutting-edge features.",
+                    'In order to test each laptop, we have conducted industry-standard benchmarks to determine performance and professional-grade equipment to evaluate the screen. We also measure battery life, judge design quality and even check for any cutting-edge features.',
                     textAlign: TextAlign.justify,
                     style: TextStyle(fontSize: 16),
                   ),
