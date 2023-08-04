@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData(primarySwatch: Colors.blue),
+    theme: ThemeData(primarySwatch: Colors.blue, fontFamily: "Poppins-Regular"),
     debugShowCheckedModeBanner: false,
     home: const MyColumnRowWidgets(),
   ));
@@ -29,6 +29,7 @@ class MyColumnRowWidgets extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(height: 5),
                   Text(
                     "Asus Official Store",
                     style: TextStyle(
@@ -36,9 +37,9 @@ class MyColumnRowWidgets extends StatelessWidget {
                         fontSize: 18,
                         color: Colors.white),
                   ),
-                  SizedBox(height: 5),
                   Text("Active 5 hours ago",
-                      style: TextStyle(color: Colors.white, fontSize: 14))
+                      style: TextStyle(color: Colors.white, fontSize: 14)),
+                  SizedBox(height: 5),
                 ],
               ),
               SizedBox(height: 5),
@@ -66,7 +67,7 @@ class MyColumnRowWidgets extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.fromLTRB(10, 5, 0, 0),
+                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                   child: Text(
                     "Type: Pro 17 W700",
                     style: TextStyle(fontSize: 17, color: Colors.grey),
@@ -75,13 +76,15 @@ class MyColumnRowWidgets extends StatelessWidget {
 
                 // Laptop view //
                 const Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding:
+                      EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10.0),
                   child: Image(image: AssetImage('images/laptop.png')),
                 ),
 
                 // gray section //
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(
+                      left: 20.0, right: 20.0, bottom: 10.0),
                   child: Container(
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 224, 223, 223),
@@ -208,14 +211,26 @@ class MyColumnRowWidgets extends StatelessWidget {
                           ),
                         ],
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Add to Cart",
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 20,
-                              color: Colors.white),
+                      SizedBox(
+                        height: 55.0,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Row(
+                            children: [
+                              Icon(
+                                Icons.shopping_cart,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                "Add to Cart",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 20,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],
