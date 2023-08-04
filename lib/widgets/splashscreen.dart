@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterjourney/widgets/rowcolumn.dart';
 
-void main() => runApp(const MaterialApp(home: _MySplashScreenState()));
+void main() => runApp(const MaterialApp(home: _MySplashScreenState(), debugShowCheckedModeBanner: false));
 
 class _MySplashScreenState extends StatefulWidget {
   const _MySplashScreenState({super.key});
@@ -17,7 +17,7 @@ class __MySplashScreenStateState extends State<_MySplashScreenState> {
  @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () => Navigator.push(
+    Future.delayed(Duration(seconds: 3), () => Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const MyColumnRowWidgets()),
             ));
@@ -29,7 +29,7 @@ class __MySplashScreenStateState extends State<_MySplashScreenState> {
     return const Scaffold(
       body: Center(
         child:  Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(100.0),
           child: Image(image: AssetImage('images/brandlogo.png')),
         )
       ),
