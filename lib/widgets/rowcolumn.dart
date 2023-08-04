@@ -14,41 +14,41 @@ class MyColumnRowWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Container(
+          color: Colors.blue,
+          height: 70.00,
+          width: double.infinity,
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.arrow_back_ios, color: Colors.white),
+              SizedBox(height: 5),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Asus Official Store",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.white),
+                  ),
+                  SizedBox(height: 5),
+                  Text("Active 5 hours ago",
+                      style: TextStyle(color: Colors.white, fontSize: 14))
+                ],
+              ),
+              SizedBox(height: 5),
+              Icon(Icons.menu, color: Colors.white)
+            ],
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(children: [
-          // Custom Toolbar Container //
-          Container(
-            color: Colors.blue,
-            height: 70.00,
-            width: double.infinity,
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.arrow_back_ios, color: Colors.white),
-                SizedBox(height: 5),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Asus Official Store",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: Colors.white),
-                    ),
-                    SizedBox(height: 5),
-                    Text("Active 5 hours ago",
-                        style: TextStyle(color: Colors.white))
-                  ],
-                ),
-                SizedBox(height: 5),
-                Icon(Icons.menu, color: Colors.white)
-              ],
-            ),
-          ),
-
           // Heading title subtitle //
           Align(
             alignment: AlignmentDirectional.topStart,
