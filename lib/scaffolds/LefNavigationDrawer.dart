@@ -3,18 +3,22 @@ import 'package:flutterjourney/sample-pages.dart';
 
 
 class LefNavigationDrawer extends StatelessWidget {
+  const LefNavigationDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: LeftNavigationDrawerActivity(),
+      home: const LeftNavigationDrawerActivity(),
     );
   }
 }
 
 class LeftNavigationDrawerActivity extends StatefulWidget {
+  const LeftNavigationDrawerActivity({super.key});
+
   @override
   _LeftNavigationDrawerActivity createState() =>
       _LeftNavigationDrawerActivity();
@@ -26,14 +30,14 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
   var scaffoldKey = GlobalKey<ScaffoldState>();
   var bodyTitle = "A drawer is an invisible side screen";
 
-  var _myDrawerReplacableScreensData = [
-    HomeScreen(),
-    AccountScreen(),
-    ProfileScreen(),
-    DashboardScreen()
+  final _myDrawerReplacableScreensData = [
+    const HomeScreen(),
+    const AccountScreen(),
+    const ProfileScreen(),
+    const DashboardScreen()
   ];
 
-  var _toolbarTitle = ["Home", "Account", "Profile", "Dashboard"];
+  final _toolbarTitle = ["Home", "Account", "Profile", "Dashboard"];
 
   int selectedDrawerItem = 0;
 
@@ -45,7 +49,7 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
       appBar: AppBar(
         title: Text(_toolbarTitle[selectedDrawerItem]),
         leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () {
               scaffoldKey.currentState?.openDrawer();
             }),
@@ -58,7 +62,7 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
           padding: EdgeInsets.zero,
           children: <Widget>[
             /// Drawer header part
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               accountName: Text("Nayeem Shiddiki Abir"),
               accountEmail: Text("abircoxsbazar@gmail.com"),
               currentAccountPicture: CircleAvatar(
@@ -68,8 +72,8 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
             /// Drawer list item
             ListTile(
-                leading: Icon(Icons.home),
-                title: Text("Home"),
+                leading: const Icon(Icons.home),
+                title: const Text("Home"),
                 onTap: () {
 
                   setState(() {
@@ -78,7 +82,7 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
                   /// Snackbar
                   ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Click on Home item")));
+                      const SnackBar(content: Text("Click on Home item")));
 
                   /// Change text of body as sample dynamically
                   setState(() {
@@ -98,8 +102,8 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
 
                 }),
             ListTile(
-                leading: Icon(Icons.account_balance),
-                title: Text("Account"),
+                leading: const Icon(Icons.account_balance),
+                title: const Text("Account"),
                 onTap: () {
                   setState(() {
                     selectedDrawerItem = 1;
@@ -108,8 +112,8 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
                   });
                 }),
             ListTile(
-                leading: Icon(Icons.person),
-                title: Text("Profile"),
+                leading: const Icon(Icons.person),
+                title: const Text("Profile"),
                 onTap: () {
                   setState(() {
                     selectedDrawerItem = 2;
@@ -118,8 +122,8 @@ class _LeftNavigationDrawerActivity extends State<LeftNavigationDrawerActivity> 
                   });
                 }),
             ListTile(
-                leading: Icon(Icons.dashboard),
-                title: Text("Dashboard"),
+                leading: const Icon(Icons.dashboard),
+                title: const Text("Dashboard"),
                 onTap: () {
                     setState(() {
                       selectedDrawerItem = 3;

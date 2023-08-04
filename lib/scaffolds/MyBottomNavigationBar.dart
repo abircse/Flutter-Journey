@@ -9,7 +9,7 @@ class MyBottomNavigationBar extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.green),
-      home: BottomNavigationActivity(),
+      home: const BottomNavigationActivity(),
     );
   }
 }
@@ -23,10 +23,10 @@ class BottomNavigationActivity extends StatefulWidget {
 
 class _bottomNav extends State<BottomNavigationActivity> {
   final _myScreensData = [
-    HomeScreen(),
-    AccountScreen(),
-    ProfileScreen(),
-    DashboardScreen()
+    const HomeScreen(),
+    const AccountScreen(),
+    const ProfileScreen(),
+    const DashboardScreen()
   ];
 
   final _toolbarTitle = ["Home", "Account", "Profile", "Dashboard"];
@@ -37,7 +37,7 @@ class _bottomNav extends State<BottomNavigationActivity> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(_toolbarTitle[selectedBottomNavItem], style: TextStyle(fontSize: 30)),
+          title: Text(_toolbarTitle[selectedBottomNavItem], style: const TextStyle(fontSize: 30)),
           centerTitle: false,
           toolbarHeight: 70,
         ),

@@ -5,7 +5,7 @@ void main() {
   runApp(MaterialApp(
     theme: ThemeData(primarySwatch: Colors.blue),
     debugShowCheckedModeBanner: false,
-    home: MyGridViewScreen(),
+    home: const MyGridViewScreen(),
   )
   );
 }

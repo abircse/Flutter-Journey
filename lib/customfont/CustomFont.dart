@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
 class CustomFont extends StatelessWidget {
+  const CustomFont({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme:
           ThemeData(primarySwatch: Colors.blue, fontFamily: "Poppins-Regular"),
       darkTheme: ThemeData(primarySwatch: Colors.green),
-      home: CustomFontActivity(),
+      home: const CustomFontActivity(),
     );
   }
 }
 
 class CustomFontActivity extends StatefulWidget {
+  const CustomFontActivity({super.key});
+
   @override
   _CustomFont createState() => _CustomFont();
 }
@@ -38,9 +42,9 @@ class _CustomFont extends State<CustomFontActivity> {
               onPressed: () {
                 MySnackbar("Click", context);
               },
-              icon: Icon(Icons.settings)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.airplanemode_active)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.person))
+              icon: const Icon(Icons.settings)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.airplanemode_active)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.person))
         ],
       ),
       body: Column(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterjourney/navigationroute/SecondScreen.dart';
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class FirstScreen extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SecondScreen()),
+              MaterialPageRoute(builder: (context) => const SecondScreen()),
             );
           },
         ),

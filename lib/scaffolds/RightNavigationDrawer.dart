@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
 class RightNavigationDrawer extends StatelessWidget {
+  const RightNavigationDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: RightNavigationDrawerActivity(),
+      home: const RightNavigationDrawerActivity(),
     );
   }
 }
 
 class RightNavigationDrawerActivity extends StatefulWidget {
+  const RightNavigationDrawerActivity({super.key});
+
   @override
   _RightNavigationDrawerActivity createState() =>
       _RightNavigationDrawerActivity();
@@ -36,20 +40,20 @@ class _RightNavigationDrawerActivity
               onPressed: () {
                 scaffoldKey.currentState?.openEndDrawer();
               },
-              icon: Icon(Icons.no_food_outlined)),
+              icon: const Icon(Icons.no_food_outlined)),
         ],
       ),
       body: Center(
           child: Text(
         bodyTitle,
-        style: TextStyle(fontSize: 20.0),
+        style: const TextStyle(fontSize: 20.0),
       )),
       endDrawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             /// Drawer header part
-            UserAccountsDrawerHeader(
+            const UserAccountsDrawerHeader(
               accountName: Text("Nayeem Shiddiki Abir"),
               accountEmail: Text("abircoxsbazar@gmail.com"),
               currentAccountPicture: CircleAvatar(
@@ -59,12 +63,12 @@ class _RightNavigationDrawerActivity
 
             /// Drawer list item
             ListTile(
-                leading: Icon(Icons.home),
-                title: Text("Home"),
+                leading: const Icon(Icons.home),
+                title: const Text("Home"),
                 onTap: () {
                   /// Snackbar
                   ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Click on Home item")));
+                      const SnackBar(content: Text("Click on Home item")));
 
                   /// Change text of body as sample dynamically
                   setState(() {
@@ -75,16 +79,16 @@ class _RightNavigationDrawerActivity
                   Navigator.of(context).pop();
                 }),
             ListTile(
-                leading: Icon(Icons.person),
-                title: Text("Burger"),
+                leading: const Icon(Icons.person),
+                title: const Text("Burger"),
                 onTap: () {}),
             ListTile(
-                leading: Icon(Icons.dashboard),
-                title: Text("Pizza"),
+                leading: const Icon(Icons.dashboard),
+                title: const Text("Pizza"),
                 onTap: () {}),
             ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Juice-Orange"),
+                leading: const Icon(Icons.settings),
+                title: const Text("Juice-Orange"),
                 onTap: () {}),
           ],
         ),

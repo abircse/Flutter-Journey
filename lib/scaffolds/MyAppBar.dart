@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget{
+  const MyAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.green),
-      home: AppBarActivity(),
+      home: const AppBarActivity(),
     );
   }
 }
 
 class AppBarActivity extends StatefulWidget{
+  const AppBarActivity({super.key});
+
   @override
   _AppBar createState() => _AppBar();
 }
@@ -35,9 +39,9 @@ class _AppBar extends State<AppBarActivity> {
           toolbarHeight: 70,
           toolbarOpacity: 1,
           actions: [
-            IconButton(onPressed: () { MySnackbar("Click", context); }, icon: Icon(Icons.settings)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.airplanemode_active)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.person))
+            IconButton(onPressed: () { MySnackbar("Click", context); }, icon: const Icon(Icons.settings)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.airplanemode_active)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.person))
           ],
         ),
       );

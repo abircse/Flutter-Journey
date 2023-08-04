@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
 class FloatingIcon extends StatelessWidget{
+  const FloatingIcon({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData(primarySwatch: Colors.green),
-      home: FloatingIconActivity(),
+      home: const FloatingIconActivity(),
     );
   }
 }
 
 class FloatingIconActivity extends StatefulWidget{
+  const FloatingIconActivity({super.key});
+
   @override
   _floatingIcon createState() => _floatingIcon();
 }
@@ -28,7 +32,7 @@ class _floatingIcon extends State<FloatingIconActivity>{
           child: const Icon(Icons.alarm),
           onPressed: () {
             ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text("CLICK ON FLOATING ACTION")));
+                .showSnackBar(const SnackBar(content: Text("CLICK ON FLOATING ACTION")));
           },
         ),
       );
