@@ -57,7 +57,7 @@ class MyColumnRowWidgets extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
-                  padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+                  padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
                   child: Text(
                     "ASUS GEN BOOK 5",
                     style: TextStyle(
@@ -67,7 +67,7 @@ class MyColumnRowWidgets extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
                   child: Text(
                     "Type: Pro 17 W700",
                     style: TextStyle(fontSize: 17, color: Colors.grey),
