@@ -184,7 +184,8 @@ class MyColumnRowWidgets extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                  padding:
+                      const EdgeInsets.only(left: 30.0, right: 30.0, top: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -209,7 +210,13 @@ class MyColumnRowWidgets extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text("Add to Cart"),
+                        child: const Text(
+                          "Add to Cart",
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 20,
+                              color: Colors.white),
+                        ),
                       )
                     ],
                   ),
@@ -218,87 +225,6 @@ class MyColumnRowWidgets extends StatelessWidget {
             ),
           ),
         ]),
-      ),
-    );
-  }
-}
-
-////////////
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Testing project")),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 224, 223, 223),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 224, 223, 223),
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(20))),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 2, // Weight of section 1
-                    child: Container(
-                      height: 100,
-                      child: const Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child:
-                              Image(image: AssetImage('images/brandlogo.png')),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 4, // Weight of section 2
-                    child: Container(
-                      height: 100,
-                      child: const SizedBox(
-                        width: double.infinity,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Asus Official Store",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.black),
-                            ),
-                            Text("View Store",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Colors.grey))
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1, // Weight of section 3
-                    child: Container(
-                      height: 100,
-                      child: const Center(
-                        child:
-                            Icon(Icons.arrow_forward_ios, color: Colors.black),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
