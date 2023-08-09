@@ -24,6 +24,7 @@ class _MyRegistrationFormState extends StatefulWidget {
 }
 
 class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
+
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
