@@ -70,6 +70,12 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                       labelText: "Last Name"),
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.name,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Last Name';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
@@ -80,6 +86,12 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                       labelText: "Email"),
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Email';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
@@ -90,6 +102,12 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                       labelText: "Phone"),
                   textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.phone,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Phone';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
@@ -101,6 +119,12 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                   textInputAction: TextInputAction.next,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Password';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
@@ -109,8 +133,14 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                       border: OutlineInputBorder(),
                       hintText: "Write here...",
                       labelText: "Short Biography"),
-                  textInputAction: TextInputAction.next,
+                  textInputAction: TextInputAction.done,
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter Short Biography Name';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 15),
                 SizedBox(
@@ -119,10 +149,17 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // If the form is valid, display a snackbar. In the real world,
-                        // you'd often call a server or save the information in a database.
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Processing Data')),
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Expanded(
+                              child: AlertDialog(
+                                title: const Text("Result"),
+                                content: Text(
+                                    "FullName: ${firstNameController.text} ${lastNameController.text} \n Email: ${emailController.text} \n Phone: ${phoneController.text} \n Password: ${passwordController.text}, \n Biography: ${shortBiographyController.text}"),
+                              ),
+                            );
+                          },
                         );
                       }
                       // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(firstNameController.text)));
