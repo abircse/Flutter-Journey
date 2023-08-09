@@ -62,6 +62,7 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 TextFormField(
                   controller: firstNameController,
                   decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(),
                       hintText: "Write here...",
                       labelText: "First Name"),
@@ -78,6 +79,7 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 TextFormField(
                   controller: lastNameController,
                   decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(),
                       hintText: "Write here...",
                       labelText: "Last Name"),
@@ -94,6 +96,7 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(),
                       hintText: "Write here...",
                       labelText: "Email"),
@@ -110,6 +113,7 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 TextFormField(
                   controller: phoneController,
                   decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.phone),
                       border: OutlineInputBorder(),
                       hintText: "Write here...",
                       labelText: "Phone"),
@@ -126,13 +130,16 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 TextFormField(
                   obscureText: _obscured,
                   decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.password),
                     border: OutlineInputBorder(),
                     hintText: "Write here...",
                     labelText: 'Password',
                     suffixIcon: IconButton(
-                      icon: Icon( _obscured ? Icons.visibility : Icons.visibility_off),
+                      icon: Icon(
+                          _obscured ? Icons.visibility : Icons.visibility_off),
                       onPressed: () {
-                        setState(() {
+                        setState(
+                          () {
                             _obscured = !_obscured;
                           },
                         );
@@ -152,6 +159,7 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 TextFormField(
                   controller: shortBiographyController,
                   decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.note),
                       border: OutlineInputBorder(),
                       hintText: "Write here...",
                       labelText: "Short Biography"),
