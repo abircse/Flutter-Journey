@@ -34,6 +34,19 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController shortBiographyController = TextEditingController();
 
+  final textFieldFocusNode = FocusNode();
+  bool _obscured = false;
+
+  void _toggleObscured() {
+    setState(() {
+      _obscured = !_obscured;
+      if (textFieldFocusNode.hasPrimaryFocus)
+        return; // If focus is on text field, dont unfocus
+      textFieldFocusNode.canRequestFocus =
+          false; // Prevents focus if tap on eye
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,13 +124,22 @@ class __MyRegistrationFormStateState extends State<_MyRegistrationFormState> {
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
-                  controller: passwordController,
-                  decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Write here...",
-                      labelText: "Password"),
-                  textInputAction: TextInputAction.next,
-                  obscureText: true,
+                  obscureText: _obscured,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Write here...",
+                    labelText: 'Password',
+                    suffixIcon: IconButton(
+                      icon: Icon( _obscured ? Icons.visibility : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() {
+                            _obscured = !_obscured;
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                  focusNode: textFieldFocusNode,
                   keyboardType: TextInputType.visiblePassword,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
