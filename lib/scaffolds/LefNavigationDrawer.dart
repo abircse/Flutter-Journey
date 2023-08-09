@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/sample-pages.dart';
+import 'package:flutterjourney/scaffolds/sample-pages.dart';
 
 
 class LefNavigationDrawer extends StatelessWidget {
