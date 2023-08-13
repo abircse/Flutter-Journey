@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.green),
+      theme: ThemeData(primaryColor: const Color(0XFF027f6a)),
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(primaryColor: Colors.grey),
       home: const MyScaffoldWidgets(),
@@ -30,7 +30,7 @@ class MyScaffoldWidgets extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFF045e54),
+          backgroundColor: const Color(0XFF027f6a),
           bottom: const TabBar(
             indicatorColor: Colors.white,
             indicatorWeight: 5.0,
@@ -39,9 +39,9 @@ class MyScaffoldWidgets extends StatelessWidget {
             unselectedLabelColor: Color.fromARGB(255, 204, 204, 204),
             tabs: [
               Tab(icon: Icon(Icons.groups_2)),
-              Tab(child: Text("Chats", style: TextStyle(fontSize: 18.0))),
-              Tab(child: Text("Status", style: TextStyle(fontSize: 18.0))),
-              Tab(child: Text("Calls", style: TextStyle(fontSize: 18.0))),
+              Tab(child: Text("Chats", style: TextStyle(fontSize: 16.0))),
+              Tab(child: Text("Status", style: TextStyle(fontSize: 16.0))),
+              Tab(child: Text("Calls", style: TextStyle(fontSize: 16.0))),
             ],
           ),
           title: const Text('WhatsApp'),
@@ -53,7 +53,12 @@ class MyScaffoldWidgets extends StatelessWidget {
           ],
         ),
         body: const TabBarView(
-          children: [GroupTabsScreen(), ChatTabScreen(), StatusTabSceeen(), CallsTabScreens()],
+          children: [
+            GroupTabsScreen(),
+            ChatTabScreen(),
+            StatusTabSceeen(),
+            CallsTabScreens()
+          ],
         ),
       ),
     );
