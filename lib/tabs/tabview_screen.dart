@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutterjourney/tabs/callscreens.dart';
 import 'package:flutterjourney/tabs/chattab.dart';
-import 'package:flutterjourney/tabs/messagetab.dart';
+import 'package:flutterjourney/tabs/groupsscreen.dart';
+import 'package:flutterjourney/tabs/statusscreen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,38 +12,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.blue),
+      theme: ThemeData(primaryColor: Colors.green),
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(primaryColor: Colors.grey),
-      home: MyScaffoldWidgets(),
+      home: const MyScaffoldWidgets(),
     );
   }
 }
 
 class MyScaffoldWidgets extends StatelessWidget {
-  MyScaffoldWidgets({super.key});
-
-  late final int selectedTabIndexNo = 1;
-  final tabScreens = [const ChatTabScreen(), const MessageTabsSceeen()];
+  const MyScaffoldWidgets({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      initialIndex: 1,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFF045e54),
           bottom: const TabBar(
-            indicatorColor: Colors.blue,
+            indicatorColor: Colors.white,
             indicatorWeight: 5.0,
             labelColor: Colors.white,
             isScrollable: false,
             unselectedLabelColor: Color.fromARGB(255, 204, 204, 204),
-            tabs: [Tab(icon: Icon(Icons.chat_bubble_outline), text: "Chats"), Tab(icon: Icon(Icons.email), text: "Message")],
+            tabs: [
+              Tab(icon: Icon(Icons.groups_2)),
+              Tab(child: Text("Chats", style: TextStyle(fontSize: 18.0))),
+              Tab(child: Text("Status", style: TextStyle(fontSize: 18.0))),
+              Tab(child: Text("Calls", style: TextStyle(fontSize: 18.0))),
+            ],
           ),
-          title: const Text('Tab View'),
+          title: const Text('WhatsApp'),
+          centerTitle: false,
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.camera_alt)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
+          ],
         ),
         body: const TabBarView(
-          children: [ChatTabScreen(), MessageTabsSceeen()],
+          children: [GroupTabsScreen(), ChatTabScreen(), StatusTabSceeen(), CallsTabScreens()],
         ),
       ),
     );
