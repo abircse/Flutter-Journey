@@ -51,7 +51,7 @@ class _MyScaffoldWidgetsState extends State<MyScaffoldWidgets> {
       userList = json['results'];
     });
 
-    print ("Succesfully fetch Data");
+    print ("Successfully fetch Data");
   }
 
   @override
