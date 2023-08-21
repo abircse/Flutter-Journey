@@ -17,7 +17,10 @@ class FirstScreen extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SecondScreen()),
+              MaterialPageRoute(
+                builder: (context) => const SecondScreen(),
+                settings: const RouteSettings(arguments: "abir")
+              ),
             );
           },
         ),

@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
-class SecondScreen extends StatelessWidget {
+class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
 
+  @override
+  State<SecondScreen> createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+  
+  String? name;
 
   @override
   Widget build(BuildContext context) {
+
+   name = ModalRoute.of(context)?.settings.arguments as String?;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Second Route'),
@@ -15,7 +25,7 @@ class SecondScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text('Go back!'),
+          child: Text('Go back! $name'),
         ),
       ),
     );
