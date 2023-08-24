@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutterjourney/navigationroute/FirstScreen.dart';
+import 'package:flutterjourney/paginations/pagination.dart';
 
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(primarySwatch: Colors.blue),
     debugShowCheckedModeBanner: false,
-    home: const FirstScreen(),
+    home: const MyPaginationActivity(),
   )
   );
 }
