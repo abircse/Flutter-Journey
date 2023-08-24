@@ -18,15 +18,16 @@ class _MyPaginationActivityState extends State<MyPaginationActivity> {
   bool isLoadMore = false;
 
   fetchProducts() async {
-    final url =
-        Uri.parse("https://randomuser.me/api/?page=$page&results=$limit");
+    //final url = Uri.parse("https://randomuser.me/api/?page=$page&results=$limit");
+    final url = Uri.parse("https://www.cbnbd.com/wp-json/wp/v2/posts?_embed&page=$page&per_page=20");
+
     final response = await http.get(url);
     final body = response.body;
     final json = jsonDecode(body);
 
     if (response.statusCode == 200) {
       setState(() {
-        productList = productList + json['results'];
+        productList = productList + json;
       });
     }
   }
@@ -77,9 +78,9 @@ class _MyPaginationActivityState extends State<MyPaginationActivity> {
                 child: Card(
                   child: ListTile(
                     leading: CircleAvatar(
-                        backgroundImage: NetworkImage(product['picture']['large'])),
-                    title: Text(product['email']),
-                    subtitle: Text(product['cell']),
+                        backgroundImage: NetworkImage(product['jetpack_featured_media_url'])),
+                    title: Text(product['title']['rendered']),
+                    subtitle: Text(product['excerpt']['rendered']),
                   ),
                 ),
               );
