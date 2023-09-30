@@ -2,7 +2,6 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class MyWebViewActivity extends StatefulWidget {
   const MyWebViewActivity({super.key});

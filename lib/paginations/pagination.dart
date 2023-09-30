@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../navigationroute/SecondScreen.dart';
+
 class MyPaginationActivity extends StatefulWidget {
   const MyPaginationActivity({super.key});
 
@@ -19,7 +21,8 @@ class _MyPaginationActivityState extends State<MyPaginationActivity> {
 
   fetchProducts() async {
     //final url = Uri.parse("https://randomuser.me/api/?page=$page&results=$limit");
-    final url = Uri.parse("https://www.cbnbd.com/wp-json/wp/v2/posts?_embed&page=$page&per_page=20");
+    final url = Uri.parse(
+        "https://www.cbnbd.com/wp-json/wp/v2/posts?_embed&page=$page&per_page=20");
 
     final response = await http.get(url);
     final body = response.body;
@@ -34,13 +37,13 @@ class _MyPaginationActivityState extends State<MyPaginationActivity> {
 
   @override
   void initState() {
-    if(isLoadMore) return;
+    if (isLoadMore) return;
     fetchProducts();
     scrollController.addListener(() async {
-      if (scrollController.position.pixels == scrollController.position.maxScrollExtent) {
-
+      if (scrollController.position.pixels ==
+          scrollController.position.maxScrollExtent) {
         setState(() {
-        isLoadMore = true;
+          isLoadMore = true;
         });
 
         page = page + 1;
@@ -78,9 +81,18 @@ class _MyPaginationActivityState extends State<MyPaginationActivity> {
                 child: Card(
                   child: ListTile(
                     leading: CircleAvatar(
-                        backgroundImage: NetworkImage(product['jetpack_featured_media_url'])),
-                    title: Text(product['title']['rendered']),
+                        backgroundImage: NetworkImage(
+                            product['jetpack_featured_media_url'])),
+                    title: Text(               product['title']['rendered']),
                     subtitle: Text(product['excerpt']['rendered']),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SecondScreen(),
+                            settings: const RouteSettings(arguments: "abir")),
+                      );
+                    },
                   ),
                 ),
               );
