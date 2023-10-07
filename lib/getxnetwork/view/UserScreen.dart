@@ -40,6 +40,9 @@ class _MyScaffoldWidgetsState extends State<MyScaffoldWidgets> {
         itemBuilder: (context, index) {
           final employeeData = userViewModel.userList[index];
           return ListTile(
+            onTap: () {
+              Get.snackbar(employeeData.name.toString(), "", snackPosition: SnackPosition.BOTTOM);
+            },
             title: Text(employeeData.company!.name.toString()),
             subtitle: Text(employeeData.phone.toString()),
           );
