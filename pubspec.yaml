@@ -37,6 +37,7 @@ dependencies:
   http: ^1.1.0
   webview_flutter: ^4.2.3
   android_bluetooth_printer: ^0.1.5
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:

@@ -31,8 +31,7 @@ class ApiService {
         print(response.body);
       }
       if (response.statusCode == 200) {
-        List<Product> productList = productsModelFromJson(response.body).products;
-        return productList;
+        return productsModelFromJson(response.body).products;
       }
     } catch (e) {
       print(e.toString());
